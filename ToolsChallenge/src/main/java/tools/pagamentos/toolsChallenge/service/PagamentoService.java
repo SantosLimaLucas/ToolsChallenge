@@ -8,6 +8,7 @@ import tools.pagamentos.toolsChallenge.models.enums.StatusPagamentoEnum;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 import java.util.Random;
 
 @Service
@@ -42,7 +43,17 @@ public class PagamentoService {
         }
     }
 
-    public List<Transacao> consultarPagamentos(){
+    public List<Transacao> consultarPagamentos() {
         return this.pagamentos;
+    }
+
+    public Optional<Transacao> realizarEstorno(String idTransacao) {
+        return pagamentos.stream()
+                .filter(transacao -> transacao.getId().equals(idTransacao))
+                .findFirst()
+                .map(transacao -> {
+                    transacao.getDescricao().setStatus(StatusPagamentoEnum.CANCELADO);
+                    return transacao;
+                });
     }
 }

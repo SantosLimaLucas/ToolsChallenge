@@ -1,7 +1,5 @@
 package tools.pagamentos.toolsChallenge.controller.dto;
 
-import tools.pagamentos.toolsChallenge.models.FormaPagamento;
-
 public class TransacaoDTO {
     private String cartao;
     private String id;

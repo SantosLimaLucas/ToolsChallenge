@@ -1,18 +1,14 @@
 package tools.pagamentos.toolsChallenge.models;
 
-import com.fasterxml.jackson.annotation.JsonProperty;
-import lombok.*;
+import lombok.AllArgsConstructor;
+import lombok.NoArgsConstructor;
 
 @AllArgsConstructor
 @NoArgsConstructor
 public class Transacao {
-    //@JsonProperty("cartao")
     private String cartao;
-    //@JsonProperty("id")
     private String id;
-    //@JsonProperty("descricao")
     private Descricao descricao;
-    //@JsonProperty("formaPagamento")
     private FormaPagamento formaPagamento;
 
     public String getCartao() {

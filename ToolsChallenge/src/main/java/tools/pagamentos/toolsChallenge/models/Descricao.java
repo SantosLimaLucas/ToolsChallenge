@@ -1,10 +1,9 @@
 package tools.pagamentos.toolsChallenge.models;
 
-import com.fasterxml.jackson.annotation.JsonProperty;
-import lombok.*;
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 import tools.pagamentos.toolsChallenge.models.enums.StatusPagamentoEnum;
-
-import java.time.LocalDateTime;
 
 @AllArgsConstructor
 @NoArgsConstructor

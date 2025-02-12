@@ -13,6 +13,7 @@ import tools.pagamentos.toolsChallenge.models.Transacao;
 import tools.pagamentos.toolsChallenge.service.PagamentoService;
 
 import java.util.List;
+import java.util.Optional;
 
 
 @RestController
@@ -37,5 +38,11 @@ public class PagamentosController {
     public HttpEntity<Object> consultarPagamentos(){
         List<Transacao> pagamentos = pagamentoService.consultarPagamentos();
         return ResponseEntity.status(HttpStatus.OK).body(pagamentos);
+    }
+
+    @PatchMapping
+    public HttpEntity<Object> realizarEstorno(@RequestParam String idTransacao){
+        Optional<Transacao> transacao = pagamentoService.realizarEstorno(idTransacao);
+        return transacao.isPresent() ? ResponseEntity.status(HttpStatus.OK).body(transacao.get()) : ResponseEntity.status(HttpStatus.NOT_FOUND).build();
     }
 }

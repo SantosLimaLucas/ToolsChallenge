@@ -1,6 +1,7 @@
 package tools.pagamentos.toolsChallenge.controller.dto;
 
-import lombok.*;
+import lombok.AllArgsConstructor;
+import lombok.NoArgsConstructor;
 
 @AllArgsConstructor
 @NoArgsConstructor
