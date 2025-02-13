@@ -1,13 +1,14 @@
 package tools.pagamentos.toolsChallenge.controller.dto;
 
+import jakarta.validation.constraints.NotBlank;
 import lombok.AllArgsConstructor;
-import lombok.Data;
 import lombok.NoArgsConstructor;
 
-@Data
+
 @AllArgsConstructor
 @NoArgsConstructor
 public class FormaPagamentoDTO {
+    @NotBlank(message = "É obrigatório informar o tipo do pagamento")
     String tipo;
     String parcelas;
 

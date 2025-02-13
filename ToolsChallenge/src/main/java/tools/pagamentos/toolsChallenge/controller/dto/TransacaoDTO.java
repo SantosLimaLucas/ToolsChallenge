@@ -1,9 +1,20 @@
 package tools.pagamentos.toolsChallenge.controller.dto;
 
+import jakarta.validation.Valid;
+import jakarta.validation.constraints.NotBlank;
+import lombok.AllArgsConstructor;
+import lombok.NoArgsConstructor;
+
+@AllArgsConstructor
+@NoArgsConstructor
 public class TransacaoDTO {
+    @NotBlank(message = "É obrigatório informar o cartão")
     private String cartao;
+    @NotBlank(message = "É obrigatório informar o id do pagamento")
     private String id;
+    @Valid
     private DescricaoDTO descricao;
+    @Valid
     private FormaPagamentoDTO formaPagamento;
 
     public DescricaoDTO getDescricao() {

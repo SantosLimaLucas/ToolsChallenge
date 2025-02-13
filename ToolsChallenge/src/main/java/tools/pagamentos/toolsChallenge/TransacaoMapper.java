@@ -5,6 +5,7 @@ import org.mapstruct.Mapping;
 import org.mapstruct.Named;
 import org.mapstruct.factory.Mappers;
 import tools.pagamentos.toolsChallenge.controller.dto.TransacaoDTO;
+import tools.pagamentos.toolsChallenge.exception.ToolsChallengeException;
 import tools.pagamentos.toolsChallenge.models.Transacao;
 import tools.pagamentos.toolsChallenge.models.enums.FormaPagamentoENUM;
 
@@ -32,6 +33,6 @@ public interface TransacaoMapper {
                 return e;
             }
         }
-        throw new IllegalArgumentException("Forma de pagamento inválida: " + formaPagamento);
+        throw new ToolsChallengeException("Forma de pagamento inválida: " + formaPagamento);
     }
 }

@@ -1,65 +1,68 @@
 package tools.pagamentos.toolsChallenge.controller.dto;
 
+import jakarta.validation.constraints.NotBlank;
 import lombok.AllArgsConstructor;
-import lombok.Data;
 import lombok.NoArgsConstructor;
 
 @AllArgsConstructor
 @NoArgsConstructor
-@Data
 public class DescricaoDTO {
-        String valor;
-        String dataHora;
-        String estabelecimento;
-        String nsu;
-        String codigoAutorizacao;
-        String status;
+    @NotBlank(message = "É obrigatório informar o valor do pagamento")
+    public String valor;
+    @NotBlank(message = "É obrigatório informar a data/hora do pagamento")
+    public String dataHora;
+    @NotBlank(message = "É obrigatório informar o estabelecimento")
+    public String estabelecimento;
+    public String nsu;
+    public String codigoAutorizacao;
 
-        public String getValor() {
-                return valor;
-        }
+    public String status;
 
-        public void setValor(String valor) {
-                this.valor = valor;
-        }
+   public String getValor() {
+            return valor;
+    }
 
-        public String getDataHora() {
-                return dataHora;
-        }
+    public void setValor(String valor) {
+            this.valor = valor;
+    }
 
-        public void setDataHora(String dataHora) {
-                this.dataHora = dataHora;
-        }
+    public String getDataHora() {
+            return dataHora;
+    }
 
-        public String getEstabelecimento() {
-                return estabelecimento;
-        }
+    public void setDataHora(String dataHora) {
+            this.dataHora = dataHora;
+    }
 
-        public void setEstabelecimento(String estabelecimento) {
-                this.estabelecimento = estabelecimento;
-        }
+    public String getEstabelecimento() {
+            return estabelecimento;
+    }
 
-        public String getNsu() {
-                return nsu;
-        }
+    public void setEstabelecimento(String estabelecimento) {
+            this.estabelecimento = estabelecimento;
+    }
 
-        public void setNsu(String nsu) {
-                this.nsu = nsu;
-        }
+    public String getNsu() {
+            return nsu;
+    }
 
-        public String getCodigoAutorizacao() {
-                return codigoAutorizacao;
-        }
+    public void setNsu(String nsu) {
+            this.nsu = nsu;
+    }
 
-        public void setCodigoAutorizacao(String codigoAutorizacao) {
-                this.codigoAutorizacao = codigoAutorizacao;
-        }
+    public String getCodigoAutorizacao() {
+            return codigoAutorizacao;
+    }
 
-        public String getStatus() {
-                return status;
-        }
+    public void setCodigoAutorizacao(String codigoAutorizacao) {
+            this.codigoAutorizacao = codigoAutorizacao;
+    }
 
-        public void setStatus(String status) {
-                this.status = status;
-        }
+    public String getStatus() {
+            return status;
+    }
+
+    public void setStatus(String status) {
+            this.status = status;
+    }
 }
